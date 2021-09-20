@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tarea 1</string>
+    <string name="firstScreen">Primera vista</string>
+    <string name="secondScreen">Segunda vista</string>
+    <string name="btnSiguiente">Mostrar siguiente actividad</string>
+    <string name="btnBack">Volver a la actividad principal</string>
+</resources>
