@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactDetail">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingTop="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        >
+
+        <TextView
+            android:id="@+id/tvLabelFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre" />
+        <TextView
+            android:id="@+id/tvFirstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre Contacto" />
+        <TextView
+            android:id="@+id/tvLabelSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido" />
+        <TextView
+            android:id="@+id/tvSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido Contacto" />
+        <TextView
+            android:id="@+id/tvLabelMaternalSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido materno" />
+        <TextView
+            android:id="@+id/tvMaternalSurname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellido Materno Contacto" />
+        <TextView
+            android:id="@+id/tvLabelPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Telefono" />
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="telefono Contacto" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
