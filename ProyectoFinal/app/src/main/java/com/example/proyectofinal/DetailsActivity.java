@@ -5,7 +5,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.ClipData;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +32,7 @@ public class DetailsActivity extends AppCompatActivity {
     CastRecyclerAdapter adapter;
     RequestManager manager;
     ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,7 @@ public class DetailsActivity extends AppCompatActivity {
         imageViewMoviePoster = findViewById(R.id.imageViewMoviePoster);
         recyclerMovieCast = findViewById(R.id.recyclerMovieCast);
 
+
         manager = new RequestManager(this);
         String movie_id = getIntent().getStringExtra("data");
         dialog = new ProgressDialog(this);
@@ -51,6 +57,26 @@ public class DetailsActivity extends AppCompatActivity {
         dialog.show();
         manager.searchMovieDetails(listener, movie_id);
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_details, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == android.R.id.home) {
+            finish();
+            return true;
+        }
+        if (id == R.id.actionBarSave) {
+            item.setTitle("Guardado");
+            Toast.makeText(this, "Save", Toast.LENGTH_SHORT).show();
+
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private OnDetailsApiListener listener = new OnDetailsApiListener() {
