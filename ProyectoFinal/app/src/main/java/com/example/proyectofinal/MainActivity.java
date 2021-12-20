@@ -8,14 +8,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.proyectofinal.Adapters.HomeRecyclerAdapter;
 import com.example.proyectofinal.Listeners.OnMovieClickListener;
 import com.example.proyectofinal.Listeners.OnSearchApiListener;
 import com.example.proyectofinal.Models.SearchApiResponse;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements OnMovieClickListener {
+    FirebaseAuth mAuth;
     SearchView searchView;
     RecyclerView recyclerViewHome;
     HomeRecyclerAdapter adapter;
@@ -26,8 +32,8 @@ public class MainActivity extends AppCompatActivity implements OnMovieClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+        mAuth = FirebaseAuth.getInstance();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         searchView = findViewById(R.id.searchView);
         recyclerViewHome = findViewById(R.id.recyclerViewHome);
@@ -47,6 +53,29 @@ public class MainActivity extends AppCompatActivity implements OnMovieClickListe
                 return false;
             }
         });
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_home, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.actionBarLogout) {
+            mAuth.signOut();
+            startActivity(new Intent(MainActivity.this, AuthActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if(user == null){
+            startActivity(new Intent(MainActivity.this, AuthActivity.class));
+        }
     }
 
     private final OnSearchApiListener listener = new OnSearchApiListener() {

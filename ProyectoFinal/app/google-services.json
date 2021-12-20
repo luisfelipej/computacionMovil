@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "260782880848",
+    "project_id": "moobis",
+    "storage_bucket": "moobis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260782880848:android:7836fe316617475663b955",
+        "android_client_info": {
+          "package_name": "com.example.proyectofinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260782880848-r14kbc63sse0tp0l27nki4dh0v35ahka.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8jwowRj0rLV90v8X4jWQBbBbZMTzrljs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260782880848-r14kbc63sse0tp0l27nki4dh0v35ahka.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
