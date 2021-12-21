@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoFinal">
         <activity
+            android:name=".SavedMovies"
+            android:exported="true" />
+        <activity
             android:name=".AuthActivity"
             android:exported="true" />
         <activity
